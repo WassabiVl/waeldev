@@ -1,16 +1,15 @@
 import {
-  TypeField,
-  NameField,
-  LabelField,
+  AddonsField, AfterField, AttrsField, AutocompleteField, BeforeField, BetweenField, ColumnsField, ConditionsField,
+  DefaultField,
+  DescriptionField, DisabledField, FieldNameField, IdField,
   InfoField,
-  DescriptionField,
-  BeforeField,
-  BetweenField,
-  AfterField,
-  SizeField,
-  ColumnsField,
-  ConditionsField
+  InputTypeField,
+  LabelField,
+  NameField,
+  PlaceholderField, ReadonlyField, SizeField, SubmitField,
+  TypeField, ValidationField
 } from '@vueform/builder';
+// import timer from './timer.builder.config';
 
 export default {
   categories: [
@@ -48,22 +47,26 @@ export default {
             fields: {
               type: { type: TypeField },
               name: { type: NameField },
+              inputType: { type: InputTypeField },
               label: { type: LabelField },
               tooltip: { type: InfoField },
+              placeholder: { type: PlaceholderField },
               description: { type: DescriptionField }
             }
           },
-          options: {
-            name: 'options',
-            label: 'custom options',
+          data: {
+            name: 'data',
+            label: 'Data',
             fields: {
-              // ... custom fields will come here
+              default: { type: DefaultField },
+              submit: { type: SubmitField }
             }
           },
           decorators: {
             name: 'decorators',
             label: 'Decorators',
             fields: {
+              addons: { type: AddonsField },
               before: { type: BeforeField },
               between: { type: BetweenField },
               after: { type: AfterField }
@@ -77,25 +80,58 @@ export default {
               columns: { type: ColumnsField }
             }
           },
+          validation: {
+            name: 'validation',
+            label: 'Validation',
+            fields: {
+              fieldName: { type: FieldNameField },
+              validation: { type: ValidationField }
+            }
+          },
           conditions: {
             name: 'conditions',
             label: 'Conditions',
             fields: {
               conditions: { type: ConditionsField }
             }
+          },
+          attributes: {
+            name: 'attributes',
+            label: 'Attributes',
+            fields: {
+              disabled: { type: DisabledField },
+              readonly: { type: ReadonlyField },
+              id: { type: IdField },
+              autocomplete: { type: AutocompleteField },
+              attrs: { type: AttrsField }
+            }
           }
-        }, // <- element type
+        },
         separators: {
           properties: [
-            ['type', 'name'],
-            ['label', 'info'],
+            ['name', 'inputType'],
+            ['label', 'tooltip'],
+            ['placeholder'],
             ['description']
+          ],
+          decorators: [
+            ['addons'],
+            ['before', 'between', 'after']
           ],
           layout: [
             ['size'],
             ['columns']
+          ],
+          validation: [
+
+            ['fieldName'],
+            ['validation']
+          ],
+          attributes: [
+            ['disabled', 'readonly', 'id', 'autocomplete'],
+            ['attrs']
           ]
-        } // <- element type
+        }
       }
       // ...
     }

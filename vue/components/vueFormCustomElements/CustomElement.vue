@@ -13,28 +13,28 @@
 </template>
 
 <script>
-import { ref } from 'vue'
-import VueformElement from '@vueform/vueform/element'
+import { ref } from 'vue';
+import VueformElement from '@vueform/vueform/element';
 
 export default VueformElement({
-  name: 'CustomElement',
+  name: 'CustomElement'
 }, {
-  setup(props, { element }) {
+  setup (props, { element }) {
     const defaultClasses = ref({
       container: '', // added automatically to the element's outermost DOM in ElementLayout
       input: 'form-text-input',
       input_danger: 'has-errors',
       $input: (classes, { isDanger }) => ([
         classes.input,
-        isDanger ? classes.input_danger : null,
+        isDanger ? classes.input_danger : null
       ])
-    })
+    });
 
     return {
-      defaultClasses,
-    }
+      defaultClasses
+    };
   }
-})
+});
 </script>
 
 <style lang="scss">
