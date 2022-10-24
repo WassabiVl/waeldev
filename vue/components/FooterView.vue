@@ -2,25 +2,25 @@
   <q-footer bordered class="bg-grey-4 text-primary">
     <q-card-section class="col-12 row text-center q-pa-lg">
       <div class="col-12 q-col-gutter-x-lg">
-        <router-link class="text-navlinks-footer text-weight-bold" :to="{name:'home'}">
+        <router-link class="text-navlinks-footer text-weight-bold" to="">
           {{ t('footerhomepage') }}
         </router-link>
-        <router-link class="text-navlinks-footer text-weight-bold" :to="{name:'login'}">
+        <router-link class="text-navlinks-footer text-weight-bold" to="">
           {{ t('footerlogin') }}
         </router-link>
-        <router-link class="text-navlinks-footer text-weight-bold" :to="{name:'register'}">
+        <router-link class="text-navlinks-footer text-weight-bold" to="">
           {{ t('footerregister') }}
         </router-link>
-        <router-link class="text-navlinks-footer text-weight-bold" :to="{name:'admin'}">
+        <router-link class="text-navlinks-footer text-weight-bold" to="">
           {{ t('footeradminpanel') }}
         </router-link>
-        <router-link class="text-navlinks-footer text-weight-bold" :to="{name:'imprint'}">
+        <router-link class="text-navlinks-footer text-weight-bold" to="">
           {{ t('footerimprint') }}
         </router-link>
-        <router-link class="text-navlinks-footer text-weight-bold" :to="{name:'agb'}">
+        <router-link class="text-navlinks-footer text-weight-bold" to="">
           {{ t('footeragb') }}
         </router-link>
-        <router-link class="text-navlinks-footer text-weight-bold" :to="{name:'privacy'}">
+        <router-link class="text-navlinks-footer text-weight-bold" to="">
           {{ t('footerprivacy') }}
         </router-link>
       </div>

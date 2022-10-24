@@ -2,9 +2,9 @@ const routes = [
 
   {
     path: '/',
-    component: () => import(/* webpackChunkName: "group-main" */'../layout/MainLayout.vue'),
+    component: () => import('../layout/MainLayout.vue'),
     children: [
-      { path: '/', component: () => import(/* webpackChunkName: "group-admin" */'../pages/admin/VueFormAdmin.vue'), name: 'vueEditForm' }
+      { path: '/', component: () => import('../pages/admin/VueFormAdmin.vue'), name: 'vueEditForm' }
     ]
   },
 

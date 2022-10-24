@@ -1,10 +1,9 @@
 <template>
-  <VueformBuilder @save="handleSave" ref="builder"/>
+  <VueformBuilder ref="builder"/>
 </template>
 
 <script>
 import axios from 'axios';
-import routing from '../../fosRouting/index';
 import { defineComponent, onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { useQuasar } from 'quasar';

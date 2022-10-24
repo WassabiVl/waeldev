@@ -12,6 +12,7 @@ import Vueform from '@vueform/vueform/plugin';
 import vueformConfig from './../vueform.config';
 import vueformBuilderConfig from './../builder.config';
 import vueFormBuilder from '@vueform/builder';
+import BaseTimer from './components/vueFormCustomElements/BaseTimer';
 
 loadFonts();
 const pinia = createPinia();
@@ -20,5 +21,5 @@ createApp(App)
   .use(pinia).use(cors).use(router).use(i18n)
   .use(Vueform, vueformConfig)
   .use(vueFormBuilder, vueformBuilderConfig)
-
+  .component('BaseTimer', BaseTimer)
   .mount('#app');

@@ -17,8 +17,7 @@ const builder = plugin((context) => {
     '.border-primary-500-imp': {
       borderColor: theme('colors.primary.500')
     },
-    '.has-error': {
-    }
+    '.has-error': {}
   });
 
   const groups = theme('groups') || [];

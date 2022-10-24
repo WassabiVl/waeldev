@@ -1,4 +1,4 @@
-import { onMounted, ref, computed, toRefs } from 'vue';
+import { computed, onMounted, ref, toRefs } from 'vue';
 
 const getElementSchemaByPath = (schema, path) => {
   if (!path) {
@@ -426,13 +426,25 @@ export default function () {
         }
       },
       setup (props, context, component) {
-        const handleAddElement = (path, position, schema, isNew) => { context.emit('add-element', path, position, schema, isNew); };
+        const handleAddElement = (path, position, schema, isNew) => {
+          context.emit('add-element', path, position, schema, isNew);
+        };
 
-        const handleSelectElement = (path) => { context.emit('select-element', path); };
-        const handleCloneElement = (path) => { context.emit('clone-element', path); };
-        const handleRemoveElement = (path) => { context.emit('remove-element', path); };
-        const handleUpdateWidth = (path, width) => { context.emit('update-width', path, width); };
-        const handleSetDraggedSchema = (schema) => { context.emit('set-dragged-schema', schema); };
+        const handleSelectElement = (path) => {
+          context.emit('select-element', path);
+        };
+        const handleCloneElement = (path) => {
+          context.emit('clone-element', path);
+        };
+        const handleRemoveElement = (path) => {
+          context.emit('remove-element', path);
+        };
+        const handleUpdateWidth = (path, width) => {
+          context.emit('update-width', path, width);
+        };
+        const handleSetDraggedSchema = (schema) => {
+          context.emit('set-dragged-schema', schema);
+        };
 
         return {
           ...component,

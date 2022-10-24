@@ -15,7 +15,7 @@
       label="Go Home"
       no-caps
       text-color="blue"
-      :to="{name:'home'}"
+      :to="{name:'vueEditForm'}"
       unelevated
     />
   </div>

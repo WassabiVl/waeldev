@@ -1,17 +1,19 @@
 # Vueform Builder Docs
 
-Documentation for Vueform Builder. Vueform Builder requires a separate license from Vueform - [learn more](https://vueform.com/builder).
+Documentation for Vueform Builder. Vueform Builder requires a separate license from Vueform
+- [learn more](https://vueform.com/builder).
 
 # Requirements
 
 - Vue.js 3.0.0+
-- Tailwind CSS 3.0.0+ 
+- Tailwind CSS 3.0.0+
 
 # Manual Installation
 
 #### 1. Install Vueform in your project
 
-Head to our [Installation guide](https://vueform.com/docs/1.x/installation#installation) and install Vueform in your project.
+Head to our [Installation guide](https://vueform.com/docs/1.x/installation#installation) and install Vueform in your
+project.
 
 #### 2. Add Vueform Builder
 
@@ -112,7 +114,8 @@ export default {
 
 # Saving
 
-To save the output of the form you can subscribe to `@save` event, which is triggered anytime the form settings are changed:
+To save the output of the form you can subscribe to `@save` event, which is triggered anytime the form settings are
+changed:
 
 ```vue
 <template>
@@ -136,10 +139,12 @@ To save the output of the form you can subscribe to `@save` event, which is trig
 ```
 
 The `@save` event has two params:
+
 - **builderObject** `{object}` <br> the object that should be saved to db (and can be loaded)
 - **history** `{array}` <br> he array of previous builderObjects
 
-The history object only contains the last `n` elements which is possible to store given the local storage limit of 5 MB in most cases (enough for about 100 records for an average form).
+The history object only contains the last `n` elements which is possible to store given the local storage limit of 5 MB
+in most cases (enough for about 100 records for an average form).
 
 ## Manual Saving
 
@@ -154,7 +159,8 @@ const history = localStorage.getItem('vueform-history')
 
 # Loading
 
-Once a form's JSON (& history) are saved into the database they can be loaded back using Vueform Builder's `.load()` method:
+Once a form's JSON (& history) are saved into the database they can be loaded back using Vueform Builder's `.load()`
+method:
 
 ```vue
 <template>
@@ -572,7 +578,8 @@ export default {
 
 ## Element settings panel
 
-Element settings can be disabled for different elements under `element.props`. This object has an item for each element type and a special one, called `default`.
+Element settings can be disabled for different elements under `element.props`. This object has an item for each element
+type and a special one, called `default`.
 
 ```js
 // builder.config.js
@@ -600,11 +607,14 @@ export default {
 }
 ```
 
-The `default` contains all the options of all the elements and can be used to disable properties globally, without having to go through each element and eg. disabling conditions for each.
+The `default` contains all the options of all the elements and can be used to disable properties globally, without
+having to go through each element and eg. disabling conditions for each.
 
-The `"ELEMENT_NAME"` (eg. `text`, `textarea` or `select`) sections contain configuration options for only that specific element. These can be used to disable config options for certain elements only and to override `default`.
+The `"ELEMENT_NAME"` (eg. `text`, `textarea` or `select`) sections contain configuration options for only that specific
+element. These can be used to disable config options for certain elements only and to override `default`.
 
-Certain configuration options are broken down further into "sub-options", enabling to turn off features within configuration groups, eg. `validation`:
+Certain configuration options are broken down further into "sub-options", enabling to turn off features within
+configuration groups, eg. `validation`:
 
 ```js
 // builder.config.js
@@ -5645,7 +5655,8 @@ export default {
 
 ## Custom Config
 
-Custom configuration can be applied to `<VueformBuilder>` individually which will be used instead of the default `builder.config.js`:
+Custom configuration can be applied to `<VueformBuilder>` individually which will be used instead of the
+default `builder.config.js`:
 
 ```vue
 <template>
@@ -5708,7 +5719,8 @@ export default {
 
 ## Reusing Existing Element Types
 
-We can add elements that are based on existing elements but using a different schema. Eg. we have the `Select` element and we want to make it available with different default configuration.
+We can add elements that are based on existing elements but using a different schema. Eg. we have the `Select` element
+and we want to make it available with different default configuration.
 
 ```js
 // The existing "Select" element's schema (default config)
@@ -5725,6 +5737,7 @@ schema: {
   ],
 }
 ```
+
 ```js
 // Our version of "Select" element's schema
 // (implementing a "User selector")
@@ -5776,7 +5789,8 @@ export default {
 }
 ```
 
-The new `User selector` element will be added to end of `Fields` element list and will inhert `select` element's config (`sections` & `separators` - more about it later).
+The new `User selector` element will be added to end of `Fields` element list and will inhert `select` element's
+config (`sections` & `separators` - more about it later).
 
 ## Display Order
 
@@ -5911,7 +5925,8 @@ export default {
 
 ## Creating New Elements with Custom Configuration Panel
 
-If we want to add a custom element, first we have to register it for Vueform based on the docs in Vueform's [Creating Elements](https://vueform.com/docs/1.x/creating-elements#registering-elements) section. 
+If we want to add a custom element, first we have to register it for Vueform based on the docs in
+Vueform's [Creating Elements](https://vueform.com/docs/1.x/creating-elements#registering-elements) section.
 
 Let's say we registered a new element called `LogoElement`. Now, we're able to add it to the builder:
 
@@ -5941,7 +5956,9 @@ export default {
 }
 ```
 
-The options are the same as discussed at the [top of this section](#element-type-options). The only difference is that this time we're going to use an `object` as the value for `sections` and `separators`. This is where we'll define what configuration options the element should have on the right panel when selected.
+The options are the same as discussed at the [top of this section](#element-type-options). The only difference is that
+this time we're going to use an `object` as the value for `sections` and `separators`. This is where we'll define what
+configuration options the element should have on the right panel when selected.
 
 ### Defining Sections
 
@@ -6042,14 +6059,17 @@ The **`fields`** contain configuration fields that are either provided by Vuefor
 
 ### Using Fields Provided by Vueform
 
-Our `LogoElement` is static so we don't need `data` and `validation` sections and to keep things simple we'll also exclude `attributes` section. We're left with following sections:
+Our `LogoElement` is static so we don't need `data` and `validation` sections and to keep things simple we'll also
+exclude `attributes` section. We're left with following sections:
+
 - `properties`
 - `options`
 - `decorators`
 - `layout`
 - `conditions`
 
-Now we need to fill in the sections with actual configuration fields. Existing fields can be imported from `@vueform/builder`:
+Now we need to fill in the sections with actual configuration fields. Existing fields can be imported
+from `@vueform/builder`:
 
 ``` js
 import {
@@ -6130,11 +6150,15 @@ export default {
 },
 ```
 
-> Every field must only be used under the section name it's supposed to be at. Eg. `ConditionsField` must be in `conditions` section, `ColumnsField` in `layout`, etc. You can find the full list of fields and their location at the [end of this chapter](#existing-element-configurations).
+> Every field must only be used under the section name it's supposed to be at. Eg. `ConditionsField` must be
+> in `conditions` section, `ColumnsField` in `layout`, etc. You can find the full list of fields and their location at
+> the [end of this chapter](#existing-element-configurations).
 
-Each new element **must** have at least a `TypeField` and `NameField` in `properties` everything else is in fact optional (but recommended).
+Each new element **must** have at least a `TypeField` and `NameField` in `properties` everything else is in fact
+optional (but recommended).
 
-Note: custom element fields can later also be disabled in `builder.config.js` as [seen previously](#element-settings-panel):
+Note: custom element fields can later also be disabled in `builder.config.js`
+as [seen previously](#element-settings-panel):
 
 ```js
 // builder.config.js
@@ -6159,7 +6183,8 @@ We can even disable our custom fields once we add them.
 
 ### Creating Custom Fields
 
-We can create our own configuration field eg. a color selector for our `LogoElement` that can choose between "Black & white" and "Color" versions.
+We can create our own configuration field eg. a color selector for our `LogoElement` that can choose between "Black &
+white" and "Color" versions.
 
 To do this let's create a `LogoColorField.js` somewhere in our project:
 
@@ -6186,9 +6211,11 @@ export default class LogoColorField extends BaseField
 }
 ```
 
-This field is **going to set the `color` property of our `LogoElement` component**, so the `LogoElement` component should have a `color` property which defines which logo is rendered.
+This field is **going to set the `color` property of our `LogoElement` component**, so the `LogoElement` component
+should have a `color` property which defines which logo is rendered.
 
-> Fields can use Vueform's [schema object](https://vueform.com/docs/1.x/rendering-forms#using-schema-object) to define configuration options.
+> Fields can use Vueform's [schema object](https://vueform.com/docs/1.x/rendering-forms#using-schema-object) to define
+> configuration options.
 
 Next add our custom field to our element definition:
 
@@ -6273,13 +6300,15 @@ export default {
 },
 ```
 
-Now if we drag the "Logo" element to our form and click on it, we'll see our custom config field showing up between other configuration options:
+Now if we drag the "Logo" element to our form and click on it, we'll see our custom config field showing up between
+other configuration options:
 
 ![Logo Options](./assets/logo-options.png)
 
 ### Adding Separators
 
-Separators can add dividers between configuration options. Eg. this would add a divider between **Name & Label** and **Info & Descrpition**:
+Separators can add dividers between configuration options. Eg. this would add a divider between **Name & Label** and **
+Info & Descrpition**:
 
 ```js
 separators: {
@@ -6293,9 +6322,12 @@ separators: {
 
 ![Properties Separators](./assets/properties-separators.png)
 
-Fields should be groupped in an array that belong together so that dividers can be rendered between groups. This way of defining separators is required because config options can be turned on and off so it should know how to group certain options.
+Fields should be groupped in an array that belong together so that dividers can be rendered between groups. This way of
+defining separators is required because config options can be turned on and off so it should know how to group certain
+options.
 
-Add a separator between `SizeField` and `ColumnsField` and move everything to the element definition. Here's the final result:
+Add a separator between `SizeField` and `ColumnsField` and move everything to the element definition. Here's the final
+result:
 
 ``` js
 import {
@@ -6390,10 +6422,10 @@ export default {
 
 Here's the full list of existing element configurations.
 
-
 ### button
 
 Used by:
+
 - Submit button
 - Reset button
 - Primary button
@@ -6507,6 +6539,7 @@ export default {
 ### checkbox
 
 Used by:
+
 - Checkbox
 
 ```js
@@ -6630,6 +6663,7 @@ export default {
 ### checkboxgroup
 
 Used by:
+
 - Checkbox group
 - Checkbox blocks
 - Checkbox tabs
@@ -6750,6 +6784,7 @@ export default {
 ### date
 
 Used by:
+
 - Date
 
 ```js
@@ -6887,6 +6922,7 @@ export default {
 ### dates
 
 Used by:
+
 - Multiple dates
 - Date range
 
@@ -7024,6 +7060,7 @@ export default {
 ### datetime
 
 Used by:
+
 - Datetime
 
 ```js
@@ -7148,6 +7185,7 @@ export default {
 ### editor
 
 Used by:
+
 - WYSIWYG editor
 
 ```js
@@ -7277,6 +7315,7 @@ export default {
 ### file
 
 Used by:
+
 - File upload
 - Image upload
 
@@ -7422,6 +7461,7 @@ export default {
 ### hidden
 
 Used by:
+
 - Hidden input
 
 ```js
@@ -7479,6 +7519,7 @@ export default {
 ### location
 
 Used by:
+
 - Location
 
 ```js
@@ -7606,6 +7647,7 @@ export default {
 ### multifile
 
 Used by:
+
 - Multi-file upload
 - Multi-image upload
 - Gallery
@@ -7759,6 +7801,7 @@ export default {
 ### multiselect
 
 Used by:
+
 - Multiselect
 
 ```js
@@ -7915,6 +7958,7 @@ export default {
 ### container
 
 Used by:
+
 - Container
 - 2 columns
 - 3 columns
@@ -7998,6 +8042,7 @@ export default {
 ### radio
 
 Used by:
+
 - Radio
 
 ```js
@@ -8121,6 +8166,7 @@ export default {
 ### radiogroup
 
 Used by:
+
 - Radio group
 - Radio blocks
 - Radio tabs
@@ -8241,6 +8287,7 @@ export default {
 ### select
 
 Used by:
+
 - Select
 
 ```js
@@ -8392,6 +8439,7 @@ export default {
 ### slider
 
 Used by:
+
 - Slider
 - Range slider
 - Vertical slider
@@ -8532,6 +8580,7 @@ export default {
 ### static
 
 Used by:
+
 - Static HTML
 - H1 header
 - H2 header
@@ -8621,6 +8670,7 @@ export default {
 ### tags
 
 Used by:
+
 - Tags
 
 ```js
@@ -8772,6 +8822,7 @@ export default {
 ### text
 
 Used by:
+
 - Text input
 - Number input
 - Email address
@@ -8904,6 +8955,7 @@ export default {
 ### textarea
 
 Used by:
+
 - Textarea
 
 ```js
@@ -9037,6 +9089,7 @@ export default {
 ### time
 
 Used by:
+
 - Time
 
 ```js
@@ -9158,6 +9211,7 @@ export default {
 ### toggle
 
 Used by:
+
 - Toggle
 
 ```js
@@ -9280,7 +9334,6 @@ export default {
   }
 }
 ```
-
 
 # Upcoming Features
 

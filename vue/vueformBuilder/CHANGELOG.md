@@ -1,8 +1,17 @@
+## v1.0.6
+
+> `2022-09-21`
+
+### 🎉 Feature
+
+- Loading performance improvement.
+
 ## v1.0.5
 
 > `2022-09-16`
 
 ### 🎉 Feature
+
 - Update conditions when the target element's path/name changes or removed.
 - Added `delay` option that delays form re-rendering during text config changes.
 - Added feature level configuration for configuration groups (eg. `validation`).
@@ -13,6 +22,7 @@
 - Text type config udpate performance improvements.
 
 ### 🐞 Bug Fixes
+
 - Fixed empty config panel appearing when selecting new element right after deselect.
 - Horiozontal presets are being removed when the element's column overrides form columns.
 - Multifile filesize min/max fields are lengthened for more convenient input.
@@ -29,15 +39,18 @@
 > `2022-08-19`
 
 ### 🎉 Feature
+
 - Added Container element & nesting option to form settings.
 - Moved Description & Tooltip config fields to top.
 - Added resizing icon to element containers.
 - Certain props (like label, info, text) are now textareas instead of text.
 - Added `storagePrefix` config option.
-- Select/multiselect/tags input type is now `search` by default and `autocomplete` is `off` to prevent browser autocompletes.
+- Select/multiselect/tags input type is now `search` by default and `autocomplete` is `off` to prevent browser
+  autocompletes.
 - Added `Data key` and `Search param` options to endpoint based data config.
 
 ### 🐞 Bug Fixes
+
 - Fix for loading form without form/theme panels.
 - Fixed `p` element closing tag.
 - Last radiogroup/select/etc options can now be removed.
@@ -59,9 +72,11 @@
 > `2022-08-05`
 
 ### 🎉 Feature
+
 - Element config options can be disabled.
 
-### ⚠️ Breaking changes 
+### ⚠️ Breaking changes
+
 - Custom config is not merged with base `builder.config.js` anymore.
 - The following config options are removed: `formProps`, `themeProps`, `exportProps`
 - The usage of the following config options have changed: `elements`
@@ -72,10 +87,14 @@
 > `2022-07-29`
 
 ### 🎉 Feature
-  - Added config options: `search`, `views`, `devices`, `darkMode`, `toggleLeft`, `toggleRight`, `clear`, `save`, `undo`, `modelPreview`, `leftPanel`, `rightPanel`, `themes`, `formProps`, `themeProps`, `exportProps`, `categories`, `elements`
+
+- Added config options: `search`, `views`, `devices`, `darkMode`, `toggleLeft`, `toggleRight`, `clear`, `save`, `undo`
+  , `modelPreview`, `leftPanel`, `rightPanel`, `themes`, `formProps`, `themeProps`, `exportProps`, `categories`
+  , `elements`
 
 ### ⚠️ Breaking changes
-  - Classes renamed:
+
+- Classes renamed:
     - `vfb-elements-search-container` > `vfb-elements-top-container`
     - `vfb-elements-search-wrapper` > `vfb-elements-search-container`
     - `vfb-elements-wrapper-with-search` > `vfb-elements-wrapper-with-keyword`
@@ -87,4 +106,5 @@
 > `2022-07-25`
 
 ### 🎉 Feature
-  - Class name based styles.
+
+- Class name based styles.
