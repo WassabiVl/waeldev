@@ -1,0 +1,41 @@
+@use 'quasarVariables.scss';
+
+.q-footer {
+  background: quasarVariables.$white !important;
+}
+
+.bg-medium-grey {
+  background: quasarVariables.$dark-grey;
+}
+
+.q-toolbar__title {
+  font-size: 1.75rem;
+  color: quasarVariables.$primary;
+}
+
+#adminlayout{
+  color: quasarVariables.$white;
+}
+
+#customerlayout{
+  color: quasarVariables.$white;
+}
+
+
+.text-navlinks-footer{
+  color: quasarVariables.$secondary;
+  text-decoration: none;
+}
+.q-item__label {
+  line-height: 1.3em !important;
+  font-size: 1.2rem;
+}
+
+.q-icon {
+  color: quasarVariables.$white;
+
+  &-diff {
+    color: quasarVariables.$secondary;
+  }
+}
+

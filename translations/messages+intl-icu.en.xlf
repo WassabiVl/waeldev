@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="hpWlheT" resname="Please Confirm your Email">
+        <source>Please Confirm your Email</source>
+        <target>Please Confirm your Email</target>
+      </trans-unit>
+      <trans-unit id="kQWnsB7" resname="Your email address has been verified.">
+        <source>Your email address has been verified.</source>
+        <target>Your email address has been verified.</target>
+      </trans-unit>
+      <trans-unit id="kQWnsB6" resname="WMS NukeSoft Login">
+        <source>WMS NukeSoft Login</source>
+        <target>WMS NukeSoft Login</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
